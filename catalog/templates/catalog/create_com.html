@@ -1,0 +1,22 @@
+{% extends 'catalog/base.html' %}
+
+{% block title %}
+Create comment
+{% endblock %}
+
+
+
+{% block content %}
+    <form method="post">
+       {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.comm }}<br>
+        <input type="text" name="itle" placeholder="Enter" class="form-control">
+        <textarea placeholder="enter" name="comm" class="form-control"></textarea>
+        <button type="submit" class="btn btn-outline-primary">Add comment</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}
+<!-- {% block sessions %} <p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p> {% endblock %}-->
+{% block body %}{% endblock %}
+{% block comments %}{% endblock %}
